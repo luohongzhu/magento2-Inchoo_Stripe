@@ -5,4 +5,12 @@
     "license": [
         "OSL-3.0"
     ],
+    "extra": {
+        "map": [
+            [
+                "*",
+                "ccohs/PaymentMonerisHPP"
+            ]
+        ]
+    }
 }
