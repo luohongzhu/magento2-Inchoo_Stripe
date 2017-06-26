@@ -1,11 +1,12 @@
 /**
- * Inchoo_Stripe Magento JS component
+ * ccohs_PaymentMonerisHPP Magento JS component
  *
- * @category    Inchoo
- * @package     Inchoo_Stripe
- * @author      Ivan Weiler & Stjepan Udovičić
- * @copyright   Inchoo (http://inchoo.net)
+ * @category    ccohs
+ * @package     ccohs_PaymentMonerisHPP
+ * @author      Leo Zhu
+ * @copyright   CCOHS (http://www.ccohs.ca)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @credit      Ivan Weiler & Stjepan Udovičić
  */
 /*browser:true*/
 /*global define*/
@@ -20,11 +21,11 @@ define(
 
         return Component.extend({
             defaults: {
-                template: 'Inchoo_Stripe/payment/stripe-form'
+                template: 'ccohs_PaymentMonerisHPP/payment/stripe-form'
             },
 
             getCode: function() {
-                return 'inchoo_stripe';
+                return 'ccohs_moneris';
             },
 
             isActive: function() {

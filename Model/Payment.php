@@ -1,19 +1,20 @@
 <?php
 /**
- * Stripe payment method model
+ * Moneris HPP payment method model
  *
- * @category    Inchoo
- * @package     Inchoo_Stripe
- * @author      Ivan Weiler & Stjepan Udovičić
- * @copyright   Inchoo (http://inchoo.net)
+ * @category    ccohs
+ * @package     ccohs_PaymentMonerisHPP
+ * @author      Leo Zhu
+ * @copyright   ccohs (http://www.ccohs.ca)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @credit      Ivan Weiler & Stjepan Udovičić
  */
 
-namespace Inchoo\Stripe\Model;
+namespace ccohs\PaymentMonerisHPP\Model;
 
 class Payment extends \Magento\Payment\Model\Method\Cc
 {
-    const CODE = 'inchoo_stripe';
+    const CODE = 'ccohs_moneris_hpp';
 
     protected $_code = self::CODE;
 
@@ -44,7 +45,7 @@ class Payment extends \Magento\Payment\Model\Method\Cc
         \Magento\Framework\Module\ModuleListInterface $moduleList,
         \Magento\Framework\Stdlib\DateTime\TimezoneInterface $localeDate,
         \Magento\Directory\Model\CountryFactory $countryFactory,
-        \Stripe\Stripe $stripe,
+        //\Stripe\Stripe $stripe,
         array $data = array()
     ) {
         parent::__construct(
@@ -64,10 +65,11 @@ class Payment extends \Magento\Payment\Model\Method\Cc
 
         $this->_countryFactory = $countryFactory;
 
-        $this->_stripeApi = $stripe;
+/*        $this->_stripeApi = $stripe;
         $this->_stripeApi->setApiKey(
             $this->getConfigData('api_key')
         );
+*/
 
         $this->_minAmount = $this->getConfigData('min_order_total');
         $this->_maxAmount = $this->getConfigData('max_order_total');
@@ -112,11 +114,13 @@ class Payment extends \Magento\Payment\Model\Method\Cc
                     // 'address_country'   => $this->_countryFactory->create()->loadByCode($billing->getCountryId())->getName(),
                 ]
             ];
+/*leo
 
             $charge = \Stripe\Charge::create($requestData);
             $payment
                 ->setTransactionId($charge->id)
                 ->setIsTransactionClosed(0);
+*/
 
         } catch (\Exception $e) {
             $this->debugData(['request' => $requestData, 'exception' => $e->getMessage()]);
@@ -140,7 +144,7 @@ class Payment extends \Magento\Payment\Model\Method\Cc
         $transactionId = $payment->getParentTransactionId();
 
         try {
-            \Stripe\Charge::retrieve($transactionId)->refund(['amount' => $amount * 100]);
+ //           \Stripe\Charge::retrieve($transactionId)->refund(['amount' => $amount * 100]);
         } catch (\Exception $e) {
             $this->debugData(['transaction_id' => $transactionId, 'exception' => $e->getMessage()]);
             $this->_logger->error(__('Payment refunding error.'));

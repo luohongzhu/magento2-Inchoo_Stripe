@@ -1,22 +1,23 @@
 <?xml version="1.0"?>
 <!--
 /**
-* Inchoo_Stripe admin configuration
+* ccohs_PaymentMonerisHPP admin configuration
 *
-* @category    Inchoo
-* @package     Inchoo_Stripe
-* @author      Ivan Weiler & Stjepan Udovičić
-* @copyright   Inchoo (http://inchoo.net)
+* @category    ccohs
+* @package     ccohs_PaymentMonerisHPP
+* @author      Leo Zhu
+* @copyright   CCOHS (http://www.ccohs.ca)
 * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+* @credit      Ivan Weiler & Stjepan Udovičić
 */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <section id="payment">
-            <group id="inchoo_stripe" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>Stripe</label>
+            <group id="ccohs_moneris" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Moneris</label>
                 <comment>
-                    <![CDATA[<a href="https://stripe.com/" target="_blank">Click here to sign up for Stripe account</a>]]>
+                    <![CDATA[<a href="https://www.moneris.com/" target="_blank">Click here to sign up for Moneris account</a>]]>
                 </comment>
                 <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Enabled</label>
@@ -35,7 +36,7 @@
                 </field>
                 <field id="cctypes" translate="label" type="multiselect" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Credit Card Types</label>
-                    <source_model>Inchoo\Stripe\Model\Source\Cctype</source_model>
+                    <source_model>ccohs\PaymentMonerisHPP\Model\Source\Cctype</source_model>
                 </field>
                 <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Sort Order</label>
