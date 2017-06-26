@@ -22,7 +22,7 @@ define(
         'use strict';
         rendererList.push(
             {
-                type: 'ccohs_moneris',
+                type: 'ccohs_paymentmonerishpp',
                 component: 'ccohs_PaymentMonerisHPP/js/view/payment/method-renderer/moneris-method'
             }
         );

@@ -14,7 +14,7 @@ namespace ccohs\PaymentMonerisHPP\Model;
 
 class Payment extends \Magento\Payment\Model\Method\Cc
 {
-    const CODE = 'ccohs_moneris_hpp';
+    const CODE = 'ccohs_paymentmonerishpp';
 
     protected $_code = self::CODE;
 

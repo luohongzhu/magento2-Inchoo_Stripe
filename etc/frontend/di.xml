@@ -16,7 +16,7 @@
     <virtualType name="ccohs\PaymentMonerisHPP\Model\ConfigProvider" type="Magento\Payment\Model\CcGenericConfigProvider">
         <arguments>
             <argument name="methodCodes" xsi:type="array">
-                <item name="ccohs_moneris" xsi:type="const">ccohs\PaymentMonerisHPP\Model\Payment::CODE</item>
+                <item name="ccohs_paymentmonerishpp" xsi:type="const">ccohs\PaymentMonerisHPP\Model\Payment::CODE</item>
             </argument>
         </arguments>
     </virtualType>
@@ -24,7 +24,7 @@
     <type name="Magento\Checkout\Model\CompositeConfigProvider">
         <arguments>
             <argument name="configProviders" xsi:type="array">
-                <item name="ccohs_moneris_config_provider" xsi:type="object">ccohs\PaymentMonerisHPP\Model\ConfigProvider</item>
+                <item name="ccohs_paymentmonerishpp_config_provider" xsi:type="object">ccohs\PaymentMonerisHPP\Model\ConfigProvider</item>
             </argument>
         </arguments>
     </type>

@@ -21,11 +21,11 @@ define(
 
         return Component.extend({
             defaults: {
-                template: 'ccohs_PaymentMonerisHPP/payment/stripe-form'
+                template: 'ccohs_PaymentMonerisHPP/payment/moneris-form'
             },
 
             getCode: function() {
-                return 'ccohs_moneris';
+                return 'ccohs_paymentmonerishpp';
             },
 
             isActive: function() {

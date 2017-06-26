@@ -14,7 +14,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
-            <ccohs_moneris>
+            <ccohs_paymentmonerishpp>
                 <active>0</active>
                 <model>ccohs\PaymentMonerisHPP\Model\Payment</model>
                 <payment_action>authorize_capture</payment_action>
@@ -23,7 +23,7 @@
                 <cctypes>AE,VI,MC,DI,JCB</cctypes>
                 <allowspecific>0</allowspecific>
                 <min_order_total>0.50</min_order_total>
-            </ccohs_moneris>
+            </ccohs_paymentmonerishpp>
         </payment>
     </default>
 </config>

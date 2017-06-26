@@ -1,5 +1,5 @@
 {
-    "name": "ccohs/moneris",
+    "name": "ccohs/paymentmonerishpp",
     "description": "Moneris HPP integration for Magento 2",
     "type": "magento2-module",
     "license": [
